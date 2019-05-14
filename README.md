@@ -40,7 +40,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
       _ [x] `drag / drop`
       _ [ ] `load`
       _ [ ] `focus`
-      _ [ ] `resize`
+      _ [x] `resize`
       _ [x] `scroll`
       _ [ ] `select`
       _ [x] `dblclick`

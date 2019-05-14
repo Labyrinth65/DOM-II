@@ -52,7 +52,7 @@ window.addEventListener("resize", function() {
 const bodyTitle = document.querySelectorAll(".text-content h2");
 bodyTitle.forEach(el =>
   el.addEventListener("click", function(event) {
-    el.style.color = "orange";
+    el.style.color = el.style.color === "orange" ? "black" : "orange";
     event.stopPropagation();
   })
 );
@@ -60,7 +60,13 @@ bodyTitle.forEach(el =>
 const bodyText = document.querySelectorAll(".text-content");
 bodyText.forEach(el =>
   el.addEventListener("click", function() {
-    el.style.color = "blue";
+    if (el.style.color === "blue") {
+      el.style.color = "black";
+    } else {
+      el.style.color = "blue";
+    }
+    // el.style.color = el.style.color === "blue" ? "black" : "blue";
+    console.log(el.style.color);
   })
 );
 
