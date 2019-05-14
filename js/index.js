@@ -1,4 +1,5 @@
 // Your code goes here
+//ten unique event listeners
 const logo = document.querySelector("header img");
 logo.addEventListener("dblclick", function() {
   alert("Don't click me!");
@@ -47,6 +48,7 @@ window.addEventListener("resize", function() {
   welcome.style.background = "aqua";
 });
 
+//prevent event propagation
 const bodyTitle = document.querySelectorAll(".text-content h2");
 bodyTitle.forEach(el =>
   el.addEventListener("click", function(event) {
@@ -62,8 +64,16 @@ bodyText.forEach(el =>
   })
 );
 
+//preventDefault
 navItems.forEach(el =>
   el.addEventListener("click", event => {
     event.preventDefault();
   })
 );
+
+//GSAP
+TweenMax.to(title, 2, {
+  left: 100,
+  backgroundColor: "aqua",
+  padding: 20
+});
