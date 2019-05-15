@@ -83,3 +83,22 @@ TweenMax.to(title, 2, {
   backgroundColor: "aqua",
   padding: 20
 });
+
+// drag and drop AH project
+
+let shiftX, shiftY;
+
+let dragged = document.querySelector(".img-content");
+
+dragged.addEventListener("dragstart", event => {
+  shiftX = event.clientX - dragged.getBoundingClientRect().left;
+  shiftY = event.clientY - dragged.getBoundingClientRect().top;
+});
+
+dragged.addEventListener("dragend", event => {
+  console.log(shiftX, shiftY);
+  dragged.style.position = "absolute";
+  dragged.style.left = event.clientX - shiftX + "px";
+  dragged.style.top = event.clientY - shiftY + "px";
+  console.log(event.clientY, event.clientX);
+});
