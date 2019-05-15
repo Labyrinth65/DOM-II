@@ -10,6 +10,7 @@ rockets.forEach(el =>
 //mouse clicked moves box to the right
 let holding = false;
 let interval = null;
+rockets.forEach(el => (el.currentX = 0));
 
 function updatePos(e) {
   if (holding === true && e.currentX < 500) {
@@ -28,7 +29,6 @@ function returnPos(e) {
 
 function moveRight(e) {
   holding = true;
-  e.target.currentX = 0;
   interval = setInterval(function() {
     updatePos(e.target);
   }, 100);
