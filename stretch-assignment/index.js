@@ -20,13 +20,6 @@ function updatePos(e) {
   }
 }
 
-function returnPos(e) {
-  if (holding === false && e.currentX > 0) {
-    e.currentX = e.currentX - 10;
-    e.style.left = e.currentX + "px";
-  }
-}
-
 function moveRight(e) {
   holding = true;
   interval = setInterval(function() {
@@ -64,6 +57,13 @@ window.addEventListener("mouseup", stopMove);
 //     returnPos(rocketGray);
 //   }, 100);
 // }
+
+function returnPos(e) {
+  if (holding === false && e.currentX > 0) {
+    e.currentX = e.currentX - 10;
+    e.style.left = e.currentX + "px";
+  }
+}
 
 function stopMove() {
   holding = false;
